@@ -2,27 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── IRAQ TV Admin CSS Custom Properties ─────────────────────────────────── */
 :root {
-  --color-brand-blue: #3b82f6;
-  --color-brand-violet: #7c3aed;
+  --color-brand-red: #c41e3a;
+  --color-brand-gold: #d4af37;
+  --color-brand-green: #1a7a3c;
+  --color-bg-primary: #080810;
+  --color-bg-secondary: #0d0d18;
+  --color-bg-card: #111120;
+  --color-bg-elevated: #181828;
+  --color-text-primary: #f0f0f8;
+  --color-text-secondary: #9a9ab8;
+  --color-text-muted: #6a6a90;
+  --color-border: #222236;
+  --color-border-muted: #363654;
 }
 
 * { box-sizing: border-box; }
 
 body {
-  background-color: #0a0a0f;
+  background-color: #080810;
   color: #f0f0f8;
   -webkit-font-smoothing: antialiased;
+  font-family: 'Noto Sans Arabic', 'Cairo', system-ui, sans-serif;
 }
 
 ::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: #0f0f1a; }
-::-webkit-scrollbar-thumb { background: #3a3a56; border-radius: 3px; }
+::-webkit-scrollbar-track { background: #0d0d18; }
+::-webkit-scrollbar-thumb { background: #363654; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #c41e3a; }
 
 .glass-card {
-  background: rgba(19, 19, 31, 0.8);
+  background: rgba(17, 17, 32, 0.8);
   backdrop-filter: blur(12px);
-  border: 1px solid #24243a;
+  border: 1px solid #222236;
   border-radius: 0.75rem;
 }
 
@@ -33,4 +46,15 @@ body {
   margin-right: auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+/* Brand line — Iraqi flag colors */
+.brand-line {
+  height: 3px;
+  background: linear-gradient(90deg, #c41e3a 0%, #1a7a3c 50%, #d4af37 100%);
+}
+
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }

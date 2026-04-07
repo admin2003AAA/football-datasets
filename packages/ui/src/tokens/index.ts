@@ -1,29 +1,31 @@
-// ─── NovaStream Design Tokens ─────────────────────────────────────────────────
+// ─── IRAQ TV Design Tokens ────────────────────────────────────────────────────
 // These tokens are consumed by Tailwind config and CSS custom properties.
 
 export const colors = {
-  // Brand palette
+  // Brand palette — IRAQ TV
   brand: {
-    blue: '#3B82F6',      // Electric Blue — primary CTA
-    blueDark: '#1D4ED8',
-    blueLight: '#60A5FA',
-    violet: '#7C3AED',    // Deep Violet — accent
-    violetDark: '#5B21B6',
-    violetLight: '#A78BFA',
+    red: '#C41E3A',        // IRAQ TV Red — primary
+    redDark: '#9B1729',
+    redLight: '#E63946',
+    gold: '#D4AF37',       // IRAQ TV Gold — accent
+    goldDark: '#B8962E',
+    goldLight: '#F4D35E',
+    green: '#1A7A3C',      // IRAQ TV Green — secondary accent
+    greenLight: '#2ECC71',
   },
 
   // Neutral / dark theme
   neutral: {
-    950: '#0A0A0F',   // deepest background
-    900: '#0F0F1A',   // primary background
-    850: '#13131F',   // card background
-    800: '#1A1A2E',   // elevated surface
-    700: '#24243A',   // border / divider
-    600: '#3A3A56',   // muted border
-    500: '#6B6B8A',   // disabled text
-    400: '#9B9BB5',   // secondary text
-    300: '#C4C4D4',   // body text
-    200: '#E2E2EE',   // heading text
+    950: '#080810',   // deepest background
+    900: '#0D0D18',   // primary background
+    850: '#111120',   // card background
+    800: '#181828',   // elevated surface
+    700: '#222236',   // border / divider
+    600: '#363654',   // muted border
+    500: '#6A6A90',   // disabled text
+    400: '#9A9AB8',   // secondary text
+    300: '#C2C2D8',   // body text
+    200: '#E0E0F0',   // heading text
     100: '#F0F0F8',   // near white
     50:  '#FAFAFF',   // pure white
   },
@@ -36,16 +38,18 @@ export const colors = {
 } as const;
 
 export const gradients = {
-  brand: 'linear-gradient(135deg, #3B82F6 0%, #7C3AED 100%)',
-  brandSubtle: 'linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(124,58,237,0.15) 100%)',
-  hero: 'linear-gradient(180deg, rgba(10,10,15,0) 0%, rgba(10,10,15,0.8) 60%, rgba(10,10,15,1) 100%)',
-  card: 'linear-gradient(145deg, rgba(26,26,46,0.9) 0%, rgba(19,19,31,0.95) 100%)',
+  brand: 'linear-gradient(135deg, #C41E3A 0%, #D4AF37 100%)',
+  brandSubtle: 'linear-gradient(135deg, rgba(196,30,58,0.15) 0%, rgba(212,175,55,0.15) 100%)',
+  hero: 'linear-gradient(180deg, rgba(8,8,16,0) 0%, rgba(8,8,16,0.8) 60%, rgba(8,8,16,1) 100%)',
+  card: 'linear-gradient(145deg, rgba(24,24,40,0.9) 0%, rgba(17,17,32,0.95) 100%)',
+  iraqi: 'linear-gradient(135deg, #C41E3A 0%, #1A7A3C 50%, #D4AF37 100%)',
 } as const;
 
 export const typography = {
   fontFamily: {
-    sans: ['Inter', 'system-ui', 'sans-serif'],
-    display: ['Cal Sans', 'Inter', 'system-ui', 'sans-serif'],
+    sans: ['Inter', 'Noto Sans Arabic', 'system-ui', 'sans-serif'],
+    arabic: ['Noto Sans Arabic', 'Cairo', 'Tajawal', 'system-ui', 'sans-serif'],
+    display: ['Cal Sans', 'Inter', 'Noto Sans Arabic', 'system-ui', 'sans-serif'],
     mono: ['JetBrains Mono', 'monospace'],
   },
   fontSize: {
@@ -77,8 +81,9 @@ export const borderRadius = {
 } as const;
 
 export const shadows = {
-  glow: '0 0 24px rgba(59, 130, 246, 0.35)',
-  glowViolet: '0 0 24px rgba(124, 58, 237, 0.35)',
+  glow: '0 0 24px rgba(196, 30, 58, 0.35)',
+  glowGold: '0 0 24px rgba(212, 175, 55, 0.35)',
+  glowGreen: '0 0 24px rgba(26, 122, 60, 0.35)',
   card: '0 4px 24px rgba(0, 0, 0, 0.4)',
   cardHover: '0 8px 40px rgba(0, 0, 0, 0.6)',
 } as const;
@@ -112,7 +117,8 @@ export const tailwindTokens = {
   borderRadius,
   boxShadow: {
     glow: shadows.glow,
-    'glow-violet': shadows.glowViolet,
+    'glow-gold': shadows.glowGold,
+    'glow-green': shadows.glowGreen,
     card: shadows.card,
     'card-hover': shadows.cardHover,
   },

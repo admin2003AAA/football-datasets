@@ -8,16 +8,20 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
+    <header className="sticky top-0 z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+      {/* Brand accent line */}
+      <div className="brand-line" />
+
       <div className="container-ns h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-          <div className="w-8 h-8 bg-gradient-to-br from-brand-blue to-brand-violet rounded-lg flex items-center justify-center text-white font-black text-sm">
-            N
+        {/* Logo — RTL: logo on the right */}
+        <Link href="/" className="flex items-center gap-3 flex-shrink-0">
+          <div className="w-9 h-9 bg-gradient-to-br from-brand-red to-brand-gold rounded-lg flex items-center justify-center text-white font-black text-sm shadow-glow">
+            <span className="text-xs leading-none">IQ</span>
           </div>
-          <span className="text-lg font-black text-white tracking-tight hidden sm:block">
-            NovaStream
-          </span>
+          <div className="hidden sm:block">
+            <span className="text-lg font-black text-white tracking-tight">IRAQ TV</span>
+            <span className="block text-[10px] text-neutral-500 leading-none -mt-0.5">قناة العراق</span>
+          </div>
         </Link>
 
         {/* Desktop nav */}
@@ -39,13 +43,13 @@ export function Navbar() {
             href="/login"
             className="text-sm text-neutral-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-neutral-800 transition-all"
           >
-            Sign In
+            تسجيل الدخول
           </Link>
           <Link
             href="/register"
-            className="text-sm font-semibold bg-gradient-to-r from-brand-blue to-brand-violet text-white px-4 py-1.5 rounded-lg hover:opacity-90 transition-opacity"
+            className="text-sm font-semibold bg-gradient-to-r from-brand-red to-brand-gold text-white px-4 py-1.5 rounded-lg hover:opacity-90 transition-opacity shadow-glow"
           >
-            Start Free
+            ابدأ مجاناً
           </Link>
         </div>
 
@@ -80,10 +84,10 @@ export function Navbar() {
           ))}
           <div className="flex gap-2 pt-2">
             <Link href="/login" className="flex-1 text-center text-sm text-neutral-300 border border-neutral-700 py-2 rounded-lg">
-              Sign In
+              تسجيل الدخول
             </Link>
-            <Link href="/register" className="flex-1 text-center text-sm font-semibold bg-gradient-to-r from-brand-blue to-brand-violet text-white py-2 rounded-lg">
-              Start Free
+            <Link href="/register" className="flex-1 text-center text-sm font-semibold bg-gradient-to-r from-brand-red to-brand-gold text-white py-2 rounded-lg">
+              ابدأ مجاناً
             </Link>
           </div>
         </div>

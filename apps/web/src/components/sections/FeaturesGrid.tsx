@@ -1,33 +1,39 @@
 const features = [
   {
     icon: '🔒',
-    title: '100% Licensed Content',
-    desc: 'Every channel and title is fully licensed. Stream with confidence.',
+    titleAr: 'محتوى مرخص 100%',
+    titleEn: '100% Licensed Content',
+    descAr: 'كل قناة ومحتوى مرخص بالكامل. استمتع بالبث بثقة تامة.',
   },
   {
     icon: '⚡',
-    title: 'Ultra-Low Latency',
-    desc: 'HLS delivery optimized for minimal buffering and blazing-fast start times.',
+    titleAr: 'زمن وصول فائق السرعة',
+    titleEn: 'Ultra-Low Latency',
+    descAr: 'توصيل HLS محسّن لتقليل التقطع وأوقات تشغيل فائقة.',
   },
   {
     icon: '📺',
-    title: '4K Ultra HD',
-    desc: 'Crisp 4K quality on Premium plan — on every compatible device.',
+    titleAr: 'جودة 4K Ultra HD',
+    titleEn: '4K Ultra HD',
+    descAr: 'جودة 4K مذهلة في الباقة المميزة على جميع الأجهزة المتوافقة.',
   },
   {
     icon: '📱',
-    title: 'All Devices',
-    desc: 'Web, mobile, Smart TV, Fire Stick, Apple TV, and more.',
+    titleAr: 'جميع الأجهزة',
+    titleEn: 'All Devices',
+    descAr: 'ويب، موبايل، تلفاز ذكي، Fire Stick، Apple TV والمزيد.',
   },
   {
-    icon: '🔔',
-    title: 'Event Reminders',
-    desc: 'Never miss a match or premiere — set reminders for scheduled streams.',
+    icon: '📅',
+    titleAr: 'جدول البرامج (EPG)',
+    titleEn: 'Program Guide (EPG)',
+    descAr: 'تصفح جداول قنواتنا ولا تفوّت مباراة أو عرضاً.',
   },
   {
-    icon: '🌍',
-    title: 'Global Coverage',
-    desc: 'Access content from anywhere with our geo-distributed CDN infrastructure.',
+    icon: '🛡️',
+    titleAr: 'أمان وخصوصية',
+    titleEn: 'Security & Privacy',
+    descAr: 'حماية متقدمة للجلسات ومصادقة JWT مع صلاحيات RBAC.',
   },
 ];
 
@@ -36,23 +42,27 @@ export function FeaturesGrid() {
     <section className="py-20">
       <div className="container-ns">
         <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 mb-4">
+            <div className="brand-line w-8" />
+            <span className="text-brand-gold text-xs font-semibold uppercase tracking-wide">IRAQ TV</span>
+            <div className="brand-line w-8" />
+          </div>
           <h2 className="text-3xl font-bold text-white mb-3">
-            Built for the{' '}
-            <span className="bg-gradient-to-r from-brand-blue to-brand-violet bg-clip-text text-transparent">
-              modern viewer
-            </span>
+            مبني للمشاهد{' '}
+            <span className="gradient-text">العصري</span>
           </h2>
           <p className="text-neutral-400 max-w-lg mx-auto">
-            Premium technology meets premium content — for the best legal streaming experience.
+            تقنية متطورة مع محتوى مميز — أفضل تجربة بث قانونية في المنطقة.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f) => (
-            <div key={f.title} className="glass-card p-6 hover:border-brand-blue/40 transition-all">
+            <div key={f.titleAr} className="glass-card p-6 hover:border-brand-red/30 transition-all group">
               <div className="text-3xl mb-4">{f.icon}</div>
-              <h3 className="font-semibold text-white mb-2">{f.title}</h3>
-              <p className="text-sm text-neutral-400 leading-relaxed">{f.desc}</p>
+              <h3 className="font-semibold text-white mb-1 group-hover:text-brand-gold transition-colors">{f.titleAr}</h3>
+              <p className="text-xs text-neutral-500 mb-2">{f.titleEn}</p>
+              <p className="text-sm text-neutral-400 leading-relaxed">{f.descAr}</p>
             </div>
           ))}
         </div>

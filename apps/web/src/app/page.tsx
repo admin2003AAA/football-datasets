@@ -7,7 +7,7 @@ import { DevicesSection } from '@/components/sections/DevicesSection';
 import { CtaBanner } from '@/components/sections/CtaBanner';
 
 export const metadata: Metadata = {
-  title: 'NovaStream — Premium Legal Live Streaming',
+  title: 'IRAQ TV — قناة العراق للبث المباشر',
 };
 
 export default function HomePage() {
