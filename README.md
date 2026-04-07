@@ -3,13 +3,39 @@
 
 ---
 
-## 🚀 NovaStream — Legal Live Streaming Platform
+## 🇮🇶 IRAQ TV — منصة البث المباشر القانونية
 
-> **New in this repo:** A complete monorepo scaffold for a premium, legal live streaming platform — built alongside the football dataset.
+> **توسعة الإصدار 2.0:** منصة البث القانونية المرخصة IRAQ TV — بنية monorepo احترافية مع دعم كامل للعربية وRTL.
 
-[![Platform](https://img.shields.io/badge/Platform-NovaStream-blue)](./docs/ARCHITECTURE.md)
+[![Platform](https://img.shields.io/badge/Platform-IRAQ%20TV-red)](./docs/ARCHITECTURE.md)
 [![Stack](https://img.shields.io/badge/Stack-Next.js%20%2B%20Express%20%2B%20TypeScript-blueviolet)](./docs/ARCHITECTURE.md)
 [![License](https://img.shields.io/badge/Content-Licensed%20Only-green)](./docs/ARCHITECTURE.md)
+[![i18n](https://img.shields.io/badge/i18n-Arabic%20%2F%20English-orange)](./packages/i18n)
+[![RTL](https://img.shields.io/badge/Layout-RTL%20Ready-yellow)](./apps/web)
+
+### ميزات الإصدار 2.0
+
+| الميزة | الوصف |
+|--------|-------|
+| 🌍 **تعريب كامل + RTL** | قواميس ar/en، اتجاه RTL في تطبيق الويب والإدارة |
+| 📅 **EPG / جدول البرامج** | أنواع وبيانات وواجهة جدول البرامج، API endpoints |
+| 💳 **نظام اشتراكات** | باقات بأسعار USD + دينار عراقي، الأحقيات، إدارة الاشتراكات |
+| 📊 **تحليلات متوسعة** | KPI cards، مخططات، جداول أداء، نشاط حديث |
+| 🛡️ **RBAC متقدم** | أدوار: super_admin / editor / support / analyst / subscriber |
+| 🎨 **هوية IRAQ TV** | ألوان العلم العراقي، رموز الشعار، RTL sidebar |
+
+### الهيكل المعماري
+
+```
+apps/web/        ← منصة البث للمستخدمين (Next.js + Tailwind + RTL)
+apps/admin/      ← لوحة التحكم المنفصلة (Next.js + Tailwind + RTL)
+apps/api/        ← API الخلفي (Express + TypeScript)
+packages/ui/     ← مكونات مشتركة وTokens تصميم IRAQ TV
+packages/types/  ← أنواع TypeScript المشتركة (EPG, RBAC, Plans)
+packages/config/ ← ثوابت وإعدادات مشتركة
+packages/i18n/   ← قواميس العربية/الإنجليزية
+docs/            ← توثيق المعمارية والـ API
+```
 
 ### Quick Start
 
@@ -26,21 +52,56 @@ cd apps/web   && npm run dev   # Web App → http://localhost:3000
 cd apps/admin && npm run dev   # Admin   → http://localhost:3002
 ```
 
-### Platform Structure
+### متغيرات البيئة
 
-```
-apps/web/        ← Public streaming platform (Next.js + Tailwind)
-apps/admin/      ← Admin dashboard (Next.js + Tailwind)
-apps/api/        ← REST API backend (Express + TypeScript)
-packages/ui/     ← Shared components & design tokens
-packages/types/  ← Shared TypeScript types
-packages/config/ ← Shared constants & utilities
-docs/            ← Architecture & API docs
+انسخ ملفات `.env.example`:
+
+```bash
+cp apps/api/.env.example apps/api/.env
+cp apps/web/.env.example apps/web/.env
+cp apps/admin/.env.example apps/admin/.env
 ```
 
-📖 **Full documentation:** [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) · [docs/API.md](./docs/API.md)
+### صفحات تطبيق الويب
 
-> ⚠️ NovaStream is for **legally licensed content only**. Not for unauthorized streaming.
+| المسار | الصفحة |
+|--------|--------|
+| `/` | الرئيسية |
+| `/live` | البث المباشر |
+| `/channels` | القنوات |
+| `/epg` | **جدول البرامج (جديد)** |
+| `/pricing` | الأسعار (مع دينار عراقي) |
+| `/login` / `/register` | تسجيل الدخول / إنشاء حساب |
+| `/support` | الدعم الفني |
+
+### صفحات لوحة التحكم
+
+| المسار | الصفحة |
+|--------|--------|
+| `/dashboard` | نظرة عامة |
+| `/dashboard/users` | إدارة المستخدمين |
+| `/dashboard/content` | إدارة المحتوى |
+| `/dashboard/subscriptions` | الاشتراكات والباقات |
+| `/dashboard/epg` | **جدول البرامج (جديد)** |
+| `/dashboard/analytics` | التحليلات والتقارير |
+| `/dashboard/roles` | **الأدوار والصلاحيات (جديد)** |
+| `/dashboard/settings` | الإعدادات |
+
+### API Endpoints الجديدة
+
+```
+GET  /api/v1/epg/channels          — قائمة قنوات EPG
+GET  /api/v1/epg/channels/:id      — قناة EPG محددة
+GET  /api/v1/epg/guide?date=...    — الدليل الكامل لليوم
+GET  /api/v1/epg/schedule          — جداول جميع القنوات
+GET  /api/v1/epg/schedule/:channelId — جدول قناة محددة
+GET  /api/v1/epg/live              — البرامج الحية الآن
+GET  /api/v1/roles                 — قائمة الأدوار
+GET  /api/v1/roles/:role           — تفاصيل دور محدد
+GET  /api/v1/roles/:role/check?permission=... — فحص الصلاحيات
+```
+
+> ⚠️ IRAQ TV مخصصة لـ**المحتوى المرخص قانونياً فقط**. غير مخصصة للبث غير المرخص.
 
 ---
 

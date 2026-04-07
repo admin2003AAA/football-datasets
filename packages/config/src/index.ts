@@ -1,9 +1,10 @@
-// ─── NovaStream Shared Configuration ─────────────────────────────────────────
+// ─── IRAQ TV Shared Configuration ────────────────────────────────────────────
 
 // App info
-export const APP_NAME = 'NovaStream';
-export const APP_TAGLINE = 'Premium Legal Live Streaming';
-export const APP_VERSION = '1.0.0';
+export const APP_NAME = 'IRAQ TV';
+export const APP_TAGLINE = 'قناة العراق — بث مباشر قانوني';
+export const APP_TAGLINE_EN = 'Iraq TV — Premium Legal Live Streaming';
+export const APP_VERSION = '2.0.0';
 
 // Pagination defaults
 export const DEFAULT_PAGE_SIZE = 20;
@@ -18,14 +19,16 @@ export const VIDEO_QUALITIES = ['4K', '1080p', '720p', '480p'] as const;
 
 // Content categories
 export const CONTENT_CATEGORIES = [
-  { id: 'sports', name: 'Sports', icon: '⚽' },
-  { id: 'news', name: 'News', icon: '📰' },
-  { id: 'entertainment', name: 'Entertainment', icon: '🎬' },
-  { id: 'movies', name: 'Movies', icon: '🎥' },
-  { id: 'series', name: 'Series', icon: '📺' },
-  { id: 'documentary', name: 'Documentary', icon: '🎞️' },
-  { id: 'kids', name: 'Kids', icon: '🧸' },
-  { id: 'music', name: 'Music', icon: '🎵' },
+  { id: 'sports', name: 'الرياضة', nameEn: 'Sports', icon: '⚽' },
+  { id: 'news', name: 'الأخبار', nameEn: 'News', icon: '📰' },
+  { id: 'entertainment', name: 'الترفيه', nameEn: 'Entertainment', icon: '🎬' },
+  { id: 'movies', name: 'الأفلام', nameEn: 'Movies', icon: '🎥' },
+  { id: 'series', name: 'المسلسلات', nameEn: 'Series', icon: '📺' },
+  { id: 'documentary', name: 'الوثائقية', nameEn: 'Documentary', icon: '🎞️' },
+  { id: 'kids', name: 'الأطفال', nameEn: 'Kids', icon: '🧸' },
+  { id: 'music', name: 'الموسيقى', nameEn: 'Music', icon: '🎵' },
+  { id: 'religion', name: 'الديني', nameEn: 'Religious', icon: '🕌' },
+  { id: 'culture', name: 'الثقافة', nameEn: 'Culture', icon: '🏛️' },
 ] as const;
 
 // Subscription plan IDs
@@ -48,22 +51,25 @@ export const SUPPORTED_DEVICES = [
 
 // Navigation links for web app
 export const NAV_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'Live', href: '/live' },
-  { label: 'Channels', href: '/channels' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Devices', href: '/devices' },
-  { label: 'Support', href: '/support' },
+  { label: 'الرئيسية', labelEn: 'Home', href: '/' },
+  { label: 'البث المباشر', labelEn: 'Live', href: '/live' },
+  { label: 'القنوات', labelEn: 'Channels', href: '/channels' },
+  { label: 'جدول البرامج', labelEn: 'Program Guide', href: '/epg' },
+  { label: 'الأسعار', labelEn: 'Pricing', href: '/pricing' },
+  { label: 'الأجهزة', labelEn: 'Devices', href: '/devices' },
+  { label: 'الدعم', labelEn: 'Support', href: '/support' },
 ] as const;
 
 // Admin navigation
 export const ADMIN_NAV_LINKS = [
-  { label: 'Dashboard', href: '/dashboard', icon: 'layout-dashboard' },
-  { label: 'Users', href: '/dashboard/users', icon: 'users' },
-  { label: 'Content', href: '/dashboard/content', icon: 'film' },
-  { label: 'Subscriptions', href: '/dashboard/subscriptions', icon: 'credit-card' },
-  { label: 'Analytics', href: '/dashboard/analytics', icon: 'bar-chart-2' },
-  { label: 'Settings', href: '/dashboard/settings', icon: 'settings' },
+  { label: 'لوحة التحكم', labelEn: 'Dashboard', href: '/dashboard', icon: 'layout-dashboard' },
+  { label: 'المستخدمون', labelEn: 'Users', href: '/dashboard/users', icon: 'users' },
+  { label: 'المحتوى', labelEn: 'Content', href: '/dashboard/content', icon: 'film' },
+  { label: 'الاشتراكات', labelEn: 'Subscriptions', href: '/dashboard/subscriptions', icon: 'credit-card' },
+  { label: 'جدول البرامج', labelEn: 'EPG', href: '/dashboard/epg', icon: 'calendar' },
+  { label: 'التحليلات', labelEn: 'Analytics', href: '/dashboard/analytics', icon: 'bar-chart-2' },
+  { label: 'الأدوار والصلاحيات', labelEn: 'Roles & Permissions', href: '/dashboard/roles', icon: 'shield' },
+  { label: 'الإعدادات', labelEn: 'Settings', href: '/dashboard/settings', icon: 'settings' },
 ] as const;
 
 // HTTP status codes

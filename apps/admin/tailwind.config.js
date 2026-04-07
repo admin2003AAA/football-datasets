@@ -10,7 +10,11 @@ module.exports = {
     extend: {
       ...tailwindTokens,
       backgroundImage: {
-        'gradient-brand': 'linear-gradient(135deg, #3B82F6 0%, #7C3AED 100%)',
+        'gradient-brand': 'linear-gradient(135deg, #C41E3A 0%, #D4AF37 100%)',
+        'gradient-iraqi': 'linear-gradient(135deg, #C41E3A 0%, #1A7A3C 50%, #D4AF37 100%)',
+      },
+      fontFamily: {
+        arabic: ['Noto Sans Arabic', 'Cairo', 'Tajawal', 'system-ui', 'sans-serif'],
       },
     },
   },

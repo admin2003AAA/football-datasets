@@ -11,6 +11,8 @@ import { channelsRouter } from './channels/channels.router';
 import { subscriptionsRouter } from './subscriptions/subscriptions.router';
 import { analyticsRouter } from './analytics/analytics.router';
 import { settingsRouter } from './settings/settings.router';
+import { epgRouter } from './epg/epg.router';
+import { rolesRouter } from './rbac/roles.router';
 import { errorHandler } from './common/middleware/error.middleware';
 import { notFoundHandler } from './common/middleware/not-found.middleware';
 
@@ -54,6 +56,8 @@ app.use(`${API_PREFIX}/channels`, channelsRouter);
 app.use(`${API_PREFIX}/subscriptions`, subscriptionsRouter);
 app.use(`${API_PREFIX}/analytics`, analyticsRouter);
 app.use(`${API_PREFIX}/settings`, settingsRouter);
+app.use(`${API_PREFIX}/epg`, epgRouter);
+app.use(`${API_PREFIX}/roles`, rolesRouter);
 
 // ─── Error handling ───────────────────────────────────────────────────────────
 app.use(notFoundHandler);
@@ -63,7 +67,8 @@ app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`
   ╔══════════════════════════════════════╗
-  ║   NovaStream API — v1.0.0           ║
+  ║   IRAQ TV API — v2.0.0              ║
+  ║   إيراق تيفي — منصة البث القانوني   ║
   ║   Listening on port ${PORT}            ║
   ║   ENV: ${process.env['NODE_ENV'] ?? 'development'}              ║
   ╚══════════════════════════════════════╝
