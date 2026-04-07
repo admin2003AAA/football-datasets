@@ -1,6 +1,50 @@
 # ⚽ Most Comprehensive Transfermarkt Dataset
 ### *Comprehensive Football/Soccer Dataset - 93,000+ Players*
 
+---
+
+## 🚀 NovaStream — Legal Live Streaming Platform
+
+> **New in this repo:** A complete monorepo scaffold for a premium, legal live streaming platform — built alongside the football dataset.
+
+[![Platform](https://img.shields.io/badge/Platform-NovaStream-blue)](./docs/ARCHITECTURE.md)
+[![Stack](https://img.shields.io/badge/Stack-Next.js%20%2B%20Express%20%2B%20TypeScript-blueviolet)](./docs/ARCHITECTURE.md)
+[![License](https://img.shields.io/badge/Content-Licensed%20Only-green)](./docs/ARCHITECTURE.md)
+
+### Quick Start
+
+```bash
+# Install all workspace dependencies
+npm install
+
+# Start all apps simultaneously (requires Turborepo)
+npm run dev
+
+# Or start individually:
+cd apps/api   && npm run dev   # API     → http://localhost:3001
+cd apps/web   && npm run dev   # Web App → http://localhost:3000
+cd apps/admin && npm run dev   # Admin   → http://localhost:3002
+```
+
+### Platform Structure
+
+```
+apps/web/        ← Public streaming platform (Next.js + Tailwind)
+apps/admin/      ← Admin dashboard (Next.js + Tailwind)
+apps/api/        ← REST API backend (Express + TypeScript)
+packages/ui/     ← Shared components & design tokens
+packages/types/  ← Shared TypeScript types
+packages/config/ ← Shared constants & utilities
+docs/            ← Architecture & API docs
+```
+
+📖 **Full documentation:** [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) · [docs/API.md](./docs/API.md)
+
+> ⚠️ NovaStream is for **legally licensed content only**. Not for unauthorized streaming.
+
+---
+
+
 [![GitHub License](https://img.shields.io/github/license/salimt/football-datasets)](https://github.com/salimt/football-datasets/blob/main/LICENSE)
 [![Data Coverage](https://img.shields.io/badge/Players-94K+-brightgreen)](https://github.com/salimt/football-datasets)
 [![Last Updated](https://img.shields.io/badge/Last%20Updated-October%202025-blue)](https://github.com/salimt/football-datasets)
