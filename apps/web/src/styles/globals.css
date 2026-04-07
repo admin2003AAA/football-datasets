@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS custom properties and global styles from @novastream/ui */
+:root {
+  --color-brand-blue: #3b82f6;
+  --color-brand-violet: #7c3aed;
+  --color-bg-primary: #0a0a0f;
+  --color-bg-secondary: #0f0f1a;
+  --color-bg-card: #13131f;
+  --color-bg-elevated: #1a1a2e;
+  --color-text-primary: #f0f0f8;
+  --color-text-secondary: #9b9bb5;
+  --color-text-muted: #6b6b8a;
+  --color-border: #24243a;
+  --color-border-muted: #3a3a56;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: #0a0a0f;
+  color: #f0f0f8;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0f0f1a; }
+::-webkit-scrollbar-thumb { background: #3a3a56; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+
+::selection { background: rgba(59, 130, 246, 0.3); color: #f0f0f8; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.container-ns {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-ns { padding-left: 2rem; padding-right: 2rem; }
+}
+
+@media (min-width: 1280px) {
+  .container-ns { padding-left: 3rem; padding-right: 3rem; }
+}
+
+.glass-card {
+  background: rgba(19, 19, 31, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid #24243a;
+  border-radius: 0.75rem;
+}
+
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.live-badge { animation: live-pulse 2s ease-in-out infinite; }

@@ -1,0 +1,105 @@
+import { Plan } from '@novastream/types';
+
+export const mockPlans: Plan[] = [
+  {
+    id: 'free',
+    name: 'Free',
+    slug: 'free',
+    description: 'Get started with limited access.',
+    price: 0,
+    currency: 'USD',
+    billingPeriod: 'monthly',
+    features: [
+      { label: '2 channels', included: true },
+      { label: 'SD quality', included: true },
+      { label: '1 device', included: true },
+      { label: 'HD quality', included: false },
+      { label: 'Ad-free', included: false },
+      { label: 'Offline download', included: false },
+    ],
+    maxStreams: 1,
+    maxDevices: 1,
+    qualityOptions: ['480p'],
+    isActive: true,
+    createdAt: '2024-01-01T00:00:00.000Z',
+    updatedAt: '2024-01-01T00:00:00.000Z',
+  },
+  {
+    id: 'basic',
+    name: 'Basic',
+    slug: 'basic',
+    description: 'Perfect for individuals.',
+    price: 9.99,
+    currency: 'USD',
+    billingPeriod: 'monthly',
+    features: [
+      { label: '50 channels', included: true },
+      { label: 'HD quality', included: true },
+      { label: '2 devices', included: true },
+      { label: 'Ad-free', included: true },
+      { label: '4K quality', included: false },
+      { label: 'Offline download', included: false },
+    ],
+    maxStreams: 1,
+    maxDevices: 2,
+    qualityOptions: ['480p', '720p'],
+    isActive: true,
+    createdAt: '2024-01-01T00:00:00.000Z',
+    updatedAt: '2024-01-01T00:00:00.000Z',
+  },
+  {
+    id: 'standard',
+    name: 'Standard',
+    slug: 'standard',
+    description: 'Great for families.',
+    price: 19.99,
+    currency: 'USD',
+    billingPeriod: 'monthly',
+    features: [
+      { label: '150 channels', included: true },
+      { label: 'Full HD quality', included: true },
+      { label: '4 devices', included: true },
+      { label: 'Ad-free', included: true },
+      { label: 'VOD library', included: true },
+      { label: '4K quality', included: false },
+    ],
+    maxStreams: 2,
+    maxDevices: 4,
+    qualityOptions: ['480p', '720p', '1080p'],
+    isPopular: true,
+    isActive: true,
+    createdAt: '2024-01-01T00:00:00.000Z',
+    updatedAt: '2024-01-01T00:00:00.000Z',
+  },
+  {
+    id: 'premium',
+    name: 'Premium',
+    slug: 'premium',
+    description: 'The ultimate streaming experience.',
+    price: 34.99,
+    currency: 'USD',
+    billingPeriod: 'monthly',
+    features: [
+      { label: 'All channels', included: true },
+      { label: '4K Ultra HD', included: true },
+      { label: 'Unlimited devices', included: true },
+      { label: 'Ad-free', included: true },
+      { label: 'Full VOD library', included: true },
+      { label: 'Offline download', included: true },
+    ],
+    maxStreams: 4,
+    maxDevices: 10,
+    qualityOptions: ['480p', '720p', '1080p', '4K'],
+    isActive: true,
+    createdAt: '2024-01-01T00:00:00.000Z',
+    updatedAt: '2024-01-01T00:00:00.000Z',
+  },
+];
+
+export function getAllPlans(): Plan[] {
+  return mockPlans.filter((p) => p.isActive);
+}
+
+export function getPlanById(id: string): Plan | undefined {
+  return mockPlans.find((p) => p.id === id);
+}
